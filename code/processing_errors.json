@@ -1,0 +1,74 @@
+[
+  {
+    "message_id": "msg_005",
+    "error": "'float' object has no attribute 'lower'",
+    "error_type": "AttributeError",
+    "timestamp": "2026-08-01T20:43:22.212176"
+  },
+  {
+    "message_id": "msg_094",
+    "error": "'float' object has no attribute 'lower'",
+    "error_type": "AttributeError",
+    "timestamp": "2026-08-01T20:43:32.501840"
+  },
+  {
+    "message_id": "msg_029",
+    "error": "'float' object has no attribute 'lower'",
+    "error_type": "AttributeError",
+    "timestamp": "2026-08-01T20:43:32.854129"
+  },
+  {
+    "message_id": "msg_105",
+    "error": "'float' object has no attribute 'lower'",
+    "error_type": "AttributeError",
+    "timestamp": "2026-08-01T20:43:33.266079"
+  },
+  {
+    "message_id": "msg_078",
+    "error": "'float' object has no attribute 'lower'",
+    "error_type": "AttributeError",
+    "timestamp": "2026-08-01T20:43:34.546172"
+  },
+  {
+    "message_id": "msg_050",
+    "error": "'float' object has no attribute 'lower'",
+    "error_type": "AttributeError",
+    "timestamp": "2026-08-01T20:43:41.114505"
+  },
+  {
+    "message_id": "msg_033",
+    "error": "'float' object has no attribute 'lower'",
+    "error_type": "AttributeError",
+    "timestamp": "2026-08-01T20:43:42.221756"
+  },
+  {
+    "message_id": "msg_020",
+    "error": "'float' object has no attribute 'lower'",
+    "error_type": "AttributeError",
+    "timestamp": "2026-08-01T20:43:42.964780"
+  },
+  {
+    "message_id": "msg_103",
+    "error": "'float' object has no attribute 'lower'",
+    "error_type": "AttributeError",
+    "timestamp": "2026-08-01T20:43:51.298954"
+  },
+  {
+    "message_id": "msg_089",
+    "error": "'float' object has no attribute 'lower'",
+    "error_type": "AttributeError",
+    "timestamp": "2026-08-01T20:43:56.980220"
+  },
+  {
+    "message_id": "msg_074",
+    "error": "'float' object has no attribute 'lower'",
+    "error_type": "AttributeError",
+    "timestamp": "2026-08-01T20:44:08.444162"
+  },
+  {
+    "message_id": "msg_054",
+    "error": "'float' object has no attribute 'lower'",
+    "error_type": "AttributeError",
+    "timestamp": "2026-08-01T20:44:09.199342"
+  }
+]

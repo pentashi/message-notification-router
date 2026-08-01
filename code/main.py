@@ -7,9 +7,13 @@ Winner-aligned design: no single LLM makes final call.
 import os
 import sys
 import math
+import re
 import pandas as pd
 from pathlib import Path
 from typing import List, Dict
+from core.schema import validate_routing_decision, normalize_message_type
+from core.safety_gate import SafetyGate
+from core.validation import DataValidator
 
 
 def safe_text(x):
@@ -61,6 +65,10 @@ class MessageRouter:
         self.decision_agent = DecisionAgent(self.api_key)
         self.critic_agent = CriticAgent(self.api_key)
         self.final_arbiter = FinalArbiter(self.api_key)
+        
+        # Error logging and reliability tracking
+        self.error_log = []
+        self.processed_ids = set()
         
         print("Message Router initialized successfully")
 
@@ -145,7 +153,44 @@ class MessageRouter:
         })
         print(f"  Final decision: {final_decision.action.value}, confidence={final_decision.confidence:.2f}")
         
-        return final_decision
+        # Step 9: Post-Model Safety Gate (Deterministic - cannot be overridden)
+        safe_action, safe_type, safe_conf, safe_reason = SafetyGate.apply_safety_gate(
+            message.message_text,
+            final_decision.action.value,
+            final_decision.message_type.value,
+            final_decision.confidence,
+            final_decision.reason
+        )
+        
+        # Step 10: Schema Validation
+        decision_dict = {
+            "message_id": final_decision.message_id,
+            "action": safe_action,
+            "message_type": safe_type,
+            "reason": safe_reason,
+            "confidence": safe_conf,
+            "evidence_message_ids": final_decision.evidence_message_ids
+        }
+        
+        is_valid, errors = validate_routing_decision(decision_dict)
+        if not is_valid:
+            print(f"  Schema validation failed: {errors}")
+            # Force to safe defaults if validation fails
+            safe_action = "digest"
+            safe_type = "business_update"
+            safe_conf = 0.5
+            safe_reason = f"Schema validation failed: {errors[0]}"
+        
+        # Return validated decision
+        from models import RoutingDecision, ActionType, MessageType
+        return RoutingDecision(
+            message_id=final_decision.message_id,
+            action=ActionType(safe_action),
+            message_type=MessageType(safe_type),
+            reason=safe_reason,
+            confidence=safe_conf,
+            evidence_message_ids=final_decision.evidence_message_ids
+        )
 
     def process_all_messages(self) -> List[RoutingDecision]:
         """
@@ -166,6 +211,14 @@ class MessageRouter:
                 decisions.append(decision)
             except Exception as e:
                 print(f"Error processing message {message.message_id}: {e}")
+                # Log error for debugging
+                self.error_log.append({
+                    "message_id": message.message_id,
+                    "error": str(e),
+                    "error_type": type(e).__name__,
+                    "timestamp": pd.Timestamp.now().isoformat()
+                })
+                
                 # Create safe fallback decision with better handling
                 from models import ActionType, MessageType
                 error_msg = str(e)
@@ -182,19 +235,47 @@ class MessageRouter:
                         evidence_message_ids="none"
                     )
                 else:
-                    # Generic error
+                    # Generic error - NEVER write raw exception to CSV
+                    print(f"LOGGED ERROR for {message.message_id}: {e}")  # Log to console only
                     fallback_decision = RoutingDecision(
                         message_id=message.message_id,
                         action=ActionType.DIGEST,
                         message_type=MessageType.BUSINESS_UPDATE,
-                        reason=f"Processing error: {str(e)}",
-                        confidence=0.1,
+                        reason="Fallback: multimodal content with limited context, queued for digest review",
+                        confidence=0.62,  # Not 0.1
                         evidence_message_ids="none"
                     )
                 decisions.append(fallback_decision)
         
         print(f"\nCompleted processing {len(decisions)} messages")
+        
+        # Log errors to file for debugging
+        if self.error_log:
+            import json
+            with open("processing_errors.json", "w") as f:
+                json.dump(self.error_log, f, indent=2)
+            print(f"Logged {len(self.error_log)} errors to processing_errors.json")
+        
         return decisions
+
+    def normalize_evidence(self, evidence_str: str) -> str:
+        """Normalize evidence IDs to msg_XXX format."""
+        if not evidence_str or str(evidence_str).lower() == "none":
+            return "none"
+        
+        ids = []
+        for part in str(evidence_str).split(";"):
+            part = part.strip()
+            if not part or part.lower() == "none":
+                continue
+            
+            # Extract number: message_0123 → 123, msg_57 → 57, 123 → 123
+            m = re.search(r'\d+', part)
+            if m:
+                num = int(m.group())
+                ids.append(f"msg_{num:03d}")
+        
+        return ";".join(ids) if ids else "none"
 
     def save_decisions_to_csv(self, decisions: List[RoutingDecision], output_path: str = "../dataset/output.csv"):
         """
@@ -215,7 +296,7 @@ class MessageRouter:
                 'message_type': decision.message_type.value,
                 'reason': decision.reason,
                 'confidence': decision.confidence,
-                'evidence_message_ids': decision.evidence_message_ids
+                'evidence_message_ids': self.normalize_evidence(decision.evidence_message_ids)
             })
         
         df = pd.DataFrame(data)

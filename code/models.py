@@ -27,7 +27,18 @@ class MessageType(str, Enum):
     FORWARD = "forward"
     SPAM = "spam"
     SCAM = "scam"
-    UNKNOWN = "unknown"
+    QUESTION = "question"
+    REMINDER = "reminder"
+    # UNKNOWN REMOVED - not allowed per official spec
+
+
+# Type mapping for normalization
+TYPE_MAP = {
+    "operational": "urgent",
+    "informational": "business_update",
+    "unknown": "business_update",  # Fallback for old outputs
+    "business": "business_update"
+}
 
 
 class ConversationType(str, Enum):
@@ -112,6 +123,13 @@ class RoutingDecision(BaseModel):
     reason: str = Field(..., description="Short human-readable explanation")
     confidence: float = Field(..., ge=0.0, le=1.0, description="Confidence score 0-1")
     evidence_message_ids: str = Field(..., description="Semicolon-separated historical message IDs or 'none'")
+
+    @validator('message_type', pre=True)
+    def normalize_type(cls, v):
+        """Normalize message types to allowed enum values."""
+        if isinstance(v, str):
+            return TYPE_MAP.get(v.lower(), v.lower())
+        return v
 
     @validator('confidence')
     def confidence_must_be_valid(cls, v):
