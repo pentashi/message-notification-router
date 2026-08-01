@@ -1,111 +1,111 @@
 message_id,action,message_type,reason,confidence,evidence_message_ids
-msg_023,,,,,
-msg_091,,,,,
-msg_090,,,,,
-msg_048,,,,,
-msg_040,,,,,
-msg_075,,,,,
-msg_005,,,,,
-msg_104,,,,,
-msg_069,,,,,
-msg_107,,,,,
-msg_070,,,,,
-msg_003,,,,,
-msg_099,,,,,
-msg_008,,,,,
-msg_092,,,,,
-msg_060,,,,,
-msg_004,,,,,
-msg_030,,,,,
-msg_045,,,,,
-msg_052,,,,,
-msg_009,,,,,
-msg_071,,,,,
-msg_016,,,,,
-msg_065,,,,,
-msg_038,,,,,
-msg_086,,,,,
-msg_014,,,,,
-msg_094,,,,,
-msg_029,,,,,
-msg_105,,,,,
-msg_002,,,,,
-msg_010,,,,,
-msg_078,,,,,
-msg_013,,,,,
-msg_018,,,,,
-msg_044,,,,,
-msg_032,,,,,
-msg_106,,,,,
-msg_006,,,,,
-msg_109,,,,,
-msg_108,,,,,
-msg_019,,,,,
-msg_088,,,,,
-msg_056,,,,,
-msg_027,,,,,
-msg_050,,,,,
-msg_083,,,,,
-msg_063,,,,,
-msg_033,,,,,
-msg_061,,,,,
-msg_020,,,,,
-msg_017,,,,,
-msg_058,,,,,
-msg_026,,,,,
-msg_047,,,,,
-msg_046,,,,,
-msg_042,,,,,
-msg_079,,,,,
-msg_098,,,,,
-msg_037,,,,,
-msg_007,,,,,
-msg_085,,,,,
-msg_001,,,,,
-msg_021,,,,,
-msg_028,,,,,
-msg_012,,,,,
-msg_064,,,,,
-msg_103,,,,,
-msg_031,,,,,
-msg_057,,,,,
-msg_087,,,,,
-msg_067,,,,,
-msg_039,,,,,
-msg_082,,,,,
-msg_066,,,,,
-msg_049,,,,,
-msg_015,,,,,
-msg_051,,,,,
-msg_097,,,,,
-msg_089,,,,,
-msg_053,,,,,
-msg_059,,,,,
-msg_024,,,,,
-msg_072,,,,,
-msg_036,,,,,
-msg_076,,,,,
-msg_055,,,,,
-msg_102,,,,,
-msg_080,,,,,
-msg_093,,,,,
-msg_034,,,,,
-msg_035,,,,,
-msg_101,,,,,
-msg_041,,,,,
-msg_011,,,,,
-msg_110,,,,,
-msg_095,,,,,
-msg_074,,,,,
-msg_073,,,,,
-msg_054,,,,,
-msg_068,,,,,
-msg_100,,,,,
-msg_062,,,,,
-msg_096,,,,,
-msg_043,,,,,
-msg_077,,,,,
-msg_081,,,,,
-msg_025,,,,,
-msg_084,,,,,
-msg_022,,,,,
+msg_001,digest,greeting,"Casual greeting, no action required, low interruption value",0.66,msg_057;msg_058;msg_240
+msg_002,notify,urgent,"Urgent direct mention @user in work group, requires immediate attention per user work priority",0.91,msg_059;msg_371;msg_230
+msg_003,digest,payment,"useful but not time-sensitive. (low engagement user, high trust context, historically prefers 'digest').",0.66,msg_400;msg_031;msg_267
+msg_004,digest,business_update,"useful but not time-sensitive. (low engagement user, high trust context, historically prefers 'digest').",0.66,msg_246;msg_245;msg_063
+msg_005,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,msg_001;msg_002
+msg_006,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.66,msg_189;msg_030;msg_410
+msg_007,digest,greeting,"Casual greeting, no action required, low interruption value",0.66,msg_070;msg_069
+msg_008,digest,business_update,"useful but not time-sensitive. (low engagement user, high trust context, historically prefers 'digest').",0.66,msg_296;msg_071;msg_072
+msg_009,digest,greeting,"Casual greeting, no action required, low interruption value",0.66,msg_073;msg_074
+msg_010,digest,business_update,"useful but not time-sensitive. (low engagement user, high trust context, historically prefers 'digest').",0.66,msg_011;msg_076;msg_075
+msg_011,mute,spam,Safety block: Spam pattern detected: 'fwd as received|forwarding because',0.85,msg_124;msg_014;msg_172
+msg_012,mute,spam,Safety block: Spam pattern detected: 'fwd as received|forwarding because',0.85,msg_042;msg_178;msg_193
+msg_013,digest,promotion,"Promotional content matching past interests but not urgent, batched for later review",0.66,msg_081;msg_082
+msg_014,digest,promotion,"useful but not time-sensitive. (low engagement user, high trust context, historically prefers 'digest').",0.66,msg_018;msg_017;msg_084
+msg_015,mute,scam,Safety block: OTP verification failed share OTP now - OTP phishing,0.95,msg_199;msg_200;msg_085
+msg_016,mute,scam,Safety block: Support alert account blocked unless login now account-login.in - phishing domain,0.95,msg_201;msg_087;msg_088
+msg_017,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.66,msg_090;msg_089
+msg_018,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.59,msg_092;msg_091;msg_026
+msg_019,digest,greeting,"Casual greeting, no action required, low interruption value",0.6,msg_277;msg_094;msg_236
+msg_020,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,msg_001;msg_002
+msg_021,digest,payment,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.66,msg_189;msg_030;msg_410
+msg_022,digest,payment,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.66,msg_099;msg_100
+msg_023,digest,payment,"useful but not time-sensitive. (low engagement user, high trust context, historically prefers 'digest').",0.66,msg_102;msg_243;msg_101
+msg_024,digest,promotion,"useful but not time-sensitive. (low engagement user, high trust context, historically prefers 'digest').",0.66,msg_257;msg_402;msg_104
+msg_025,digest,payment,"useful but not time-sensitive. (low engagement user, high trust context, historically prefers 'digest').",0.66,msg_106;msg_239;msg_004
+msg_026,digest,payment,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.6,msg_107;msg_108;msg_032
+msg_027,digest,greeting,"useful but not time-sensitive. (low engagement user, high trust context, historically prefers 'digest').",0.66,msg_272;msg_033;msg_007
+msg_028,digest,promotion,"useful but not time-sensitive. (low engagement user, high trust context, historically prefers 'digest').",0.66,msg_034;msg_111;msg_112
+msg_029,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,msg_001;msg_002
+msg_030,digest,greeting,"Casual greeting, no action required, low interruption value",0.66,msg_335;msg_224;msg_383
+msg_031,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.66,msg_227;msg_228;msg_362
+msg_032,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.66,msg_120;msg_374;msg_119
+msg_033,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,msg_001;msg_002
+msg_034,mute,spam,"useful but not time-sensitive. (low engagement user, historically prefers 'digest').",0.59,msg_124;msg_014;msg_172
+msg_035,digest,business_update,"useful but not time-sensitive. (low engagement user, high trust context, historically prefers 'digest').",0.66,msg_125;msg_126;msg_281
+msg_036,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.6,msg_127;msg_128;msg_283
+msg_037,digest,greeting,"Casual greeting, no action required, low interruption value",0.66,msg_189;msg_030;msg_410
+msg_038,mute,spam,"useful but not time-sensitive. (low engagement user, historically prefers 'digest').",0.59,msg_131;msg_132
+msg_039,notify,urgent,"Urgent direct mention @user in work group, requires immediate attention per user work priority",0.91,msg_037;msg_364;msg_255
+msg_040,mute,spam,Safety block: Spam pattern detected: 'forward.*blessing|share.*blessing',0.85,msg_136;msg_135
+msg_041,digest,greeting,"useful but not time-sensitive. (low engagement user, high trust context, historically prefers 'digest').",0.66,msg_138;msg_137
+msg_042,mute,scam,"Detected as potential scam via content analysis, muted for safety regardless of user history",0.92,msg_057;msg_058;msg_240
+msg_043,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.59,msg_189;msg_030;msg_410
+msg_044,mute,scam,Safety block: Account security at risk verify OTP now - OTP phishing,0.95,msg_144;msg_036;msg_143
+msg_045,digest,greeting,"Casual greeting, no action required, low interruption value",0.66,msg_146;msg_145
+msg_046,mute,scam,Safety block: Please share your OTP here quickly - OTP phishing,0.95,msg_148;msg_147
+msg_047,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.66,msg_189;msg_030;msg_410
+msg_048,mute,scam,"Safety block: Penalty list, scan QR and pay clearance immediately - QR phishing",0.95,msg_237;msg_151;msg_152
+msg_049,digest,business_update,"useful but not time-sensitive. (low engagement user, high trust context, historically prefers 'digest').",0.66,msg_153;msg_291;msg_154
+msg_050,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,msg_001;msg_002
+msg_051,digest,promotion,"useful but not time-sensitive. (low engagement user, high trust context, historically prefers 'digest').",0.66,msg_257;msg_402;msg_104
+msg_052,digest,payment,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.6,msg_207;msg_208;msg_160
+msg_053,digest,greeting,"Casual greeting, no action required, low interruption value",0.59,msg_253;msg_161;msg_162
+msg_054,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,msg_001;msg_002
+msg_055,notify,urgent,"Urgent direct mention @user in work group, requires immediate attention per user work priority",0.91,msg_166;msg_387;msg_165
+msg_056,digest,urgent,"Contains time-sensitive language but from low-trust context, needs verification - showing in digest with caution",0.66,msg_168;msg_226;msg_167
+msg_057,digest,urgent,"Contains time-sensitive language but from low-trust context, needs verification - showing in digest with caution",0.66,msg_059;msg_371;msg_230
+msg_058,mute,spam,"useful but not time-sensitive. (low engagement user, historically prefers 'digest').",0.59,msg_124;msg_014;msg_172
+msg_059,mute,scam,Safety block: Claim benefits by sharing account number - account number phishing,0.95,msg_195;msg_023;msg_214
+msg_060,digest,promotion,"Promotional content matching past interests but not urgent, batched for later review",0.66,msg_175;msg_404;msg_284
+msg_061,mute,spam,Safety block: Spam pattern detected: 'forward.*blessing|share.*blessing',0.85,msg_042;msg_178;msg_193
+msg_062,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.59,msg_189;msg_030;msg_410
+msg_063,digest,urgent,"Contains time-sensitive language but from low-trust context, needs verification - showing in digest with caution",0.66,msg_181;msg_182
+msg_064,mute,scam,"Detected as potential scam via content analysis, muted for safety regardless of user history",0.92,msg_201;msg_087;msg_088
+msg_065,digest,promotion,"useful but not time-sensitive. (low engagement user, high trust context, historically prefers 'digest').",0.66,msg_260;msg_185;msg_186
+msg_066,digest,promotion,"useful but not time-sensitive. (low engagement user, high trust context, historically prefers 'digest').",0.66,msg_257;msg_402;msg_187
+msg_067,digest,payment,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.66,msg_189;msg_030;msg_410
+msg_068,digest,greeting,"Casual greeting, no action required, low interruption value",0.66,msg_191;msg_192
+msg_069,mute,spam,"useful but not time-sensitive. (low engagement user, historically prefers 'digest').",0.59,msg_042;msg_178;msg_193
+msg_070,mute,scam,"Detected as potential scam via content analysis, muted for safety regardless of user history",0.92,msg_195;msg_023;msg_214
+msg_071,digest,greeting,"Casual greeting, no action required, low interruption value",0.66,msg_197;msg_198
+msg_072,mute,scam,Safety block: OTP verify nahi hua link open - phishing,0.95,msg_199;msg_200;msg_085
+msg_073,mute,scam,Safety block: Security check required verify through link immediately - phishing,0.95,msg_201;msg_087;msg_088
+msg_074,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,msg_001;msg_002
+msg_075,digest,business_update,"useful but not time-sensitive. (low engagement user, high trust context, historically prefers 'digest').",0.66,msg_206;msg_205
+msg_076,digest,payment,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.6,msg_207;msg_208;msg_160
+msg_077,digest,greeting,"Casual greeting, no action required, low interruption value",0.66,msg_037;msg_364;msg_255
+msg_078,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,msg_001;msg_002
+msg_079,mute,scam,Safety block: Account block ho jayega OTP abhi batao - OTP phishing,0.95,msg_195;msg_023;msg_214
+msg_080,digest,greeting,"Casual greeting, no action required, low interruption value",0.66,msg_189;msg_030;msg_410
+msg_081,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.66,msg_217
+msg_082,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.66,msg_218;msg_380;msg_397
+msg_083,digest,business_update,"useful but not time-sensitive. (low engagement user, high trust context, historically prefers 'digest').",0.66,msg_219
+msg_084,digest,business_update,"useful but not time-sensitive. (low engagement user, high trust context, historically prefers 'digest').",0.66,msg_220
+msg_085,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.6,msg_221
+msg_086,digest,business_update,"useful but not time-sensitive. (low engagement user, high trust context, historically prefers 'digest').",0.66,msg_222
+msg_087,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.66,msg_389;msg_204;msg_358
+msg_088,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.66,msg_335;msg_224;msg_383
+msg_089,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,msg_001;msg_002
+msg_090,digest,greeting,"Casual greeting, no action required, low interruption value",0.5,msg_001;msg_002
+msg_091,mute,scam,"Safety block: Workspace access expire today, reply with 6 digit login code - OTP phishing",0.95,msg_238;msg_381
+msg_092,digest,payment,"useful but not time-sensitive. (low engagement user, high trust context, historically prefers 'digest').",0.5,msg_001;msg_002
+msg_093,mute,scam,"Detected as potential scam via content analysis, muted for safety regardless of user history",0.92,msg_001;msg_002
+msg_094,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,msg_001;msg_002
+msg_095,mute,scam,"Prompt injection attempt blocked: message contained embedded routing instructions which were ignored per safety policy, content flagged as phishing/scam",0.98,msg_201;msg_087;msg_088
+msg_096,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.5,msg_001;msg_002
+msg_097,notify,urgent,"Urgent direct mention @user in work group, requires immediate attention per user work priority",0.91,msg_168;msg_226;msg_167
+msg_098,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.66,msg_168;msg_226;msg_167
+msg_099,digest,greeting,"Casual greeting, no action required, low interruption value",0.66,msg_227;msg_228;msg_362
+msg_100,digest,payment,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.66,msg_227;msg_228;msg_362
+msg_101,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.66,msg_268;msg_370;msg_229
+msg_102,digest,greeting,"Casual greeting, no action required, low interruption value",0.66,msg_059;msg_371;msg_230
+msg_103,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,msg_001;msg_002
+msg_104,digest,greeting,"Casual greeting, no action required, low interruption value",0.66,msg_335;msg_224;msg_383
+msg_105,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,msg_001;msg_002
+msg_106,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.66,msg_377;msg_376;msg_234
+msg_107,mute,scam,"Prompt injection attempt blocked: message contained embedded routing instructions which were ignored per safety policy, content flagged as phishing/scam",0.98,msg_195;msg_023;msg_214
+msg_108,mute,scam,"Prompt injection attempt blocked: message contained embedded routing instructions which were ignored per safety policy, content flagged as phishing/scam",0.98,msg_094;msg_236;msg_093
+msg_109,mute,scam,"Prompt injection attempt blocked: message contained embedded routing instructions which were ignored per safety policy, content flagged as phishing/scam",0.98,msg_237;msg_151;msg_152
+msg_110,mute,scam,"Prompt injection attempt blocked: message contained embedded routing instructions which were ignored per safety policy, content flagged as phishing/scam",0.98,msg_238;msg_381
