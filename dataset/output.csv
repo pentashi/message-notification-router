@@ -1,111 +1,111 @@
 message_id,action,message_type,reason,confidence,evidence_message_ids
-msg_001,digest,greeting,"Casual greeting with low user engagement (0.21), no action required",0.66,msg_057;msg_058;msg_240
-msg_002,digest,urgent,"Contains time-sensitive language but from low-trust context, needs verification - showing in digest with caution",0.66,msg_059;msg_371;msg_230
-msg_003,digest,payment,"Payment-related content from trusted source, queued for later review",0.69,msg_400;msg_031;msg_267
-msg_004,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.67,msg_246;msg_245;msg_063
-msg_005,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,none
-msg_006,digest,business_update,"Business update with trust score 0.50, deferred to digest",0.67,msg_189;msg_030;msg_410
-msg_007,digest,greeting,"Casual greeting with low user engagement (0.22), no action required",0.7,msg_070;msg_069
-msg_008,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.66,msg_296;msg_071;msg_072
-msg_009,digest,greeting,"Casual greeting with low user engagement (0.19), no action required",0.66,msg_073;msg_074
-msg_010,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.67,msg_011;msg_076;msg_075
-msg_011,mute,spam,Safety block: Spam pattern detected: 'fwd as received|forwarding because',0.85,msg_124;msg_014;msg_172
-msg_012,mute,spam,Safety block: Spam pattern detected: 'fwd as received|forwarding because',0.85,msg_042;msg_178;msg_193
-msg_013,digest,promotion,"Promotional content matching past interests but not urgent, batched for later review",0.69,msg_081;msg_082
-msg_014,digest,promotion,"Promotional content from trusted business (trust 0.90), batched for later review",0.66,msg_018;msg_017;msg_084
-msg_015,mute,scam,scam pattern detected: otp,0.98,msg_199;msg_200;msg_085
-msg_016,mute,scam,scam pattern detected: account block,0.98,msg_201;msg_087;msg_088
-msg_017,digest,business_update,"Business update with trust score 0.50, deferred to digest",0.69,msg_090;msg_089
-msg_018,digest,business_update,"Business update with trust score 0.50, deferred to digest",0.59,msg_092;msg_091;msg_026
-msg_019,digest,greeting,"Casual greeting with low user engagement (0.22), no action required",0.63,msg_277;msg_094;msg_236
-msg_020,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,none
-msg_021,digest,payment,Payment-related content requiring later review but not immediate action,0.67,msg_189;msg_030;msg_410
-msg_022,digest,payment,Payment-related content requiring later review but not immediate action,0.66,msg_099;msg_100
-msg_023,digest,payment,"Payment-related content from trusted source, queued for later review",0.69,msg_102;msg_243;msg_101
-msg_024,digest,promotion,"Promotional content from trusted business (trust 0.90), batched for later review",0.67,msg_257;msg_402;msg_104
-msg_025,digest,payment,"Payment-related content from trusted source, queued for later review",0.66,msg_106;msg_239;msg_004
-msg_026,digest,payment,Payment-related content requiring later review but not immediate action,0.63,msg_107;msg_108;msg_032
-msg_027,digest,greeting,"Casual greeting with low user engagement (0.22), no action required",0.7,msg_272;msg_033;msg_007
-msg_028,digest,promotion,"Promotional content from trusted business (trust 0.90), batched for later review",0.69,msg_034;msg_111;msg_112
-msg_029,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,none
-msg_030,digest,greeting,"Casual greeting with low user engagement (0.00), no action required",0.68,msg_335;msg_224;msg_383
-msg_031,digest,business_update,"Business update with trust score 0.50, deferred to digest",0.69,msg_227;msg_228;msg_362
-msg_032,digest,business_update,"Business update with trust score 0.50, deferred to digest",0.66,msg_120;msg_374;msg_119
-msg_033,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,none
-msg_034,digest,spam,"Repeated forwarding pattern detected, low value content",0.62,msg_124;msg_014;msg_172
-msg_035,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.69,msg_125;msg_126;msg_281
-msg_036,digest,business_update,"Business update with trust score 0.70, deferred to digest",0.61,msg_127;msg_128;msg_283
-msg_037,digest,greeting,"Casual greeting with low user engagement (0.27), no action required",0.67,msg_189;msg_030;msg_410
-msg_038,digest,spam,"Repeated forwarding pattern detected, low value content",0.62,msg_131;msg_132
-msg_039,digest,urgent,"Contains time-sensitive language but from low-trust context, needs verification - showing in digest with caution",0.67,msg_037;msg_364;msg_255
-msg_040,mute,spam,Safety block: Spam pattern detected: 'forward.*blessing|share.*blessing',0.85,msg_136;msg_135
-msg_041,digest,greeting,"Casual greeting with low user engagement (0.21), no action required",0.68,msg_138;msg_137
-msg_042,mute,scam,"Critic override: SEVERE: Scam message type should always be muted. Original: Detected as potential scam via content analysis, muted for safety",0.47000000000000003,msg_057;msg_058;msg_240
-msg_043,digest,business_update,"Business update with trust score 0.50, deferred to digest",0.59,msg_189;msg_030;msg_410
-msg_044,mute,scam,scam pattern detected: otp,0.98,msg_144;msg_036;msg_143
-msg_045,digest,greeting,"Casual greeting with low user engagement (0.04), no action required",0.7,msg_146;msg_145
-msg_046,mute,scam,scam pattern detected: otp,0.98,msg_148;msg_147
-msg_047,digest,business_update,"Business update with trust score 0.50, deferred to digest",0.66,msg_189;msg_030;msg_410
-msg_048,digest,greeting,"Casual greeting with low user engagement (0.27), no action required",0.68,msg_237;msg_151;msg_152
-msg_049,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.69,msg_153;msg_291;msg_154
-msg_050,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,none
-msg_051,digest,promotion,"Promotional content from trusted business (trust 0.90), batched for later review",0.67,msg_257;msg_402;msg_104
-msg_052,digest,payment,Payment-related content requiring later review but not immediate action,0.64,msg_207;msg_208;msg_160
-msg_053,digest,greeting,"Casual greeting with low user engagement (0.20), no action required",0.62,msg_253;msg_161;msg_162
-msg_054,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,none
-msg_055,digest,urgent,"Contains time-sensitive language but from low-trust context, needs verification - showing in digest with caution",0.68,msg_166;msg_387;msg_165
-msg_056,digest,urgent,"Contains time-sensitive language but from low-trust context, needs verification - showing in digest with caution",0.68,msg_168;msg_226;msg_167
-msg_057,digest,urgent,"Contains time-sensitive language but from low-trust context, needs verification - showing in digest with caution",0.69,msg_059;msg_371;msg_230
-msg_058,digest,spam,"Repeated forwarding pattern detected, low value content",0.6,msg_124;msg_014;msg_172
-msg_059,digest,business_update,"Business update with trust score 0.60, deferred to digest",0.66,msg_195;msg_023;msg_214
-msg_060,digest,promotion,"Promotional content matching past interests but not urgent, batched for later review",0.7,msg_175;msg_404;msg_284
-msg_061,mute,spam,Safety block: Spam pattern detected: 'forward.*blessing|share.*blessing',0.85,msg_042;msg_178;msg_193
-msg_062,digest,business_update,"Business update with trust score 0.50, deferred to digest",0.6,msg_189;msg_030;msg_410
-msg_063,digest,urgent,"Contains time-sensitive language but from low-trust context, needs verification - showing in digest with caution",0.69,msg_181;msg_182
-msg_064,mute,scam,"Critic override: SEVERE: Scam message type should always be muted. Original: Detected as potential scam via content analysis, muted for safety",0.49999999999999994,msg_201;msg_087;msg_088
-msg_065,digest,promotion,"Promotional content from trusted business (trust 0.90), batched for later review",0.69,msg_260;msg_185;msg_186
-msg_066,digest,promotion,"Promotional content from trusted business (trust 0.90), batched for later review",0.68,msg_257;msg_402;msg_187
-msg_067,digest,payment,Payment-related content requiring later review but not immediate action,0.67,msg_189;msg_030;msg_410
-msg_068,digest,greeting,"Casual greeting with low user engagement (0.20), no action required",0.68,msg_191;msg_192
-msg_069,digest,spam,"Repeated forwarding pattern detected, low value content",0.61,msg_042;msg_178;msg_193
-msg_070,mute,scam,scam pattern detected: otp,0.98,msg_195;msg_023;msg_214
-msg_071,digest,greeting,"Casual greeting with low user engagement (0.22), no action required",0.66,msg_197;msg_198
-msg_072,mute,scam,scam pattern detected: otp,0.98,msg_199;msg_200;msg_085
-msg_073,mute,scam,"Critic override: SEVERE: Scam message type should always be muted. Original: Detected as potential scam via content analysis, muted for safety",0.38999999999999996,msg_201;msg_087;msg_088
-msg_074,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,none
-msg_075,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.69,msg_206;msg_205
-msg_076,digest,payment,Payment-related content requiring later review but not immediate action,0.6,msg_207;msg_208;msg_160
-msg_077,digest,greeting,"Casual greeting with low user engagement (0.19), no action required",0.69,msg_037;msg_364;msg_255
-msg_078,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,none
-msg_079,mute,scam,scam pattern detected: otp,0.98,msg_195;msg_023;msg_214
-msg_080,digest,greeting,"Casual greeting with low user engagement (0.27), no action required",0.66,msg_189;msg_030;msg_410
-msg_081,digest,business_update,"Business update with trust score 0.50, deferred to digest",0.67,msg_217
-msg_082,digest,business_update,"Business update with trust score 0.50, deferred to digest",0.68,msg_218;msg_380;msg_397
-msg_083,digest,business_update,"Business update with trust score 0.50, deferred to digest",0.7,msg_219
-msg_084,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.67,msg_220
-msg_085,digest,business_update,"Business update with trust score 0.70, deferred to digest",0.62,msg_221
-msg_086,digest,business_update,"Business update relevant to user history but not immediately time-critical, suitable for digest",0.7,msg_222
-msg_087,digest,business_update,"Business update with trust score 0.50, deferred to digest",0.67,msg_389;msg_204;msg_358
-msg_088,digest,business_update,"Business update with trust score 0.50, deferred to digest",0.68,msg_335;msg_224;msg_383
-msg_089,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,none
-msg_090,digest,greeting,"Casual greeting with low user engagement (0.24), no action required",0.52,none
-msg_091,digest,business_update,"Business update with trust score 0.50, deferred to digest",0.68,msg_238;msg_381
-msg_092,digest,payment,"Payment-related content from trusted source, queued for later review",0.52,none
-msg_093,mute,scam,scam pattern detected: otp,0.98,none
-msg_094,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,none
-msg_095,digest,payment,Payment-related content requiring later review but not immediate action,0.67,msg_201;msg_087;msg_088
-msg_096,digest,business_update,"Business update with trust score 0.50, deferred to digest",0.51,none
-msg_097,digest,urgent,"Contains time-sensitive language but from low-trust context, needs verification - showing in digest with caution",0.7,msg_168;msg_226;msg_167
-msg_098,digest,business_update,"Business update with trust score 0.50, deferred to digest",0.69,msg_168;msg_226;msg_167
-msg_099,digest,greeting,"Casual greeting with low user engagement (0.20), no action required",0.68,msg_227;msg_228;msg_362
-msg_100,digest,payment,Payment-related content requiring later review but not immediate action,0.66,msg_227;msg_228;msg_362
-msg_101,digest,business_update,"Business update with trust score 0.60, deferred to digest",0.69,msg_268;msg_370;msg_229
-msg_102,digest,greeting,"Casual greeting with low user engagement (0.04), no action required",0.69,msg_059;msg_371;msg_230
-msg_103,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,none
-msg_104,digest,greeting,"Casual greeting with low user engagement (0.00), no action required",0.66,msg_335;msg_224;msg_383
-msg_105,digest,business_update,"Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",0.62,none
-msg_106,digest,business_update,"Business update with trust score 0.50, deferred to digest",0.67,msg_377;msg_376;msg_234
-msg_107,mute,scam,prompt injection blocked: routing override,0.98,msg_195;msg_023;msg_214
-msg_108,digest,greeting,"Casual greeting with low user engagement (0.22), no action required",0.61,msg_094;msg_236;msg_093
-msg_109,mute,scam,prompt injection blocked: system note for the notification router,0.98,msg_237;msg_151;msg_152
-msg_110,digest,urgent,"Contains time-sensitive language but from low-trust context, needs verification - showing in digest with caution",0.7,msg_238;msg_381
+msg_001,notify,urgent,A society group admin sent an urgent water/tanker notice requiring immediate action.,0.9,message_0057;message_0240;message_0140
+msg_002,notify,urgent,"Work group message with direct mention, urgent escalation, or same-day work dependency.",0.88,message_0371;message_0230;message_0170
+msg_003,notify,business_update,A verified business sent an update that matches the user's recent activity.,0.88,message_0031;message_0267;message_0400
+msg_004,notify,business_update,A verified business sent an update that matches the user's recent activity.,0.88,message_0245;message_0064;message_0063
+msg_005,notify,personal,A contact is holding an item for the user and needs a quick response.,0.83,message_0095;message_0390;message_0332
+msg_006,digest,event,A society group admin sent a maintenance update.,0.76,message_0271;message_0410;message_0130
+msg_007,digest,event,A society group admin sent a scheduled or social notice.,0.76,message_0070;message_0069
+msg_008,digest,business_update,"A business is requesting feedback — low priority, shown later.",0.75,message_0072;message_0071;message_0296
+msg_009,mute,personal,User has muted this group and the message has no direct mention or admin urgency.,0.82,message_0074;message_0073
+msg_010,digest,business_update,"A business is requesting feedback — low priority, shown later.",0.75,message_0011;message_0242;message_0076
+msg_011,mute,spam,High-forward-count chain message asking user to forward to others — typical spam.,0.88,message_0078;message_0077;message_0172
+msg_012,mute,forward,Forwarded message contains dangerous health misinformation advising to stop medication.,0.88,message_0194;message_0193;message_0247
+msg_013,digest,promotion,Marketplace or classified listing message — potentially relevant but not urgent.,0.76,message_0082;message_0081
+msg_014,mute,promotion,User has opted out of marketing messages from this business.,0.87,message_0017;message_0084;message_0083
+msg_015,mute,scam,"Message combines OTP/code request with account-blocking pressure, a classic scam pattern.",0.95,message_0214;message_0173;message_0213
+msg_016,mute,scam,Message pairs a suspicious link with account-blocking language.,0.93,message_0087;message_0184;message_0088
+msg_017,mute,scam,"Message asks for sensitive action (bank details, screenshot, QR payment, processing fee) typical of fraud.",0.92,message_0090;message_0089
+msg_018,mute,scam,Message claims the user won a reward and asks to claim — a lottery scam pattern.,0.92,message_0092;message_0091;message_0026
+msg_019,mute,scam,Message is from a business using a non-official domain with high user reports.,0.93,message_0094;message_0093;message_0236
+msg_020,mute,scam,Suspicious shortened/non-official link combined with verification or account language.,0.9,message_0095;message_0390;message_0332
+msg_021,digest,payment,A society group admin sent a payment reminder.,0.78,message_0271;message_0410;message_0130
+msg_022,mute,scam,"Message asks for sensitive action (bank details, screenshot, QR payment, processing fee) typical of fraud.",0.92,message_0152;message_0151;message_0150
+msg_023,digest,business_update,"A business is requesting feedback — low priority, shown later.",0.75,message_0243;message_0102;message_0101
+msg_024,mute,promotion,User has opted out of marketing messages from this business.,0.87,message_0104;message_0103;message_0257
+msg_025,notify,business_update,A verified business sent an update that matches the user's recent activity.,0.88,message_0106;message_0105;message_0239
+msg_026,mute,scam,Message is from a business using a non-official domain with high user reports.,0.93,message_0032;message_0108;message_0107
+msg_027,digest,promotion,Promotional message from a business the user has engaged with.,0.76,message_0272;message_0109;message_0033
+msg_028,mute,promotion,User has opted out of marketing messages from this business.,0.87,message_0034;message_0112;message_0111
+msg_029,digest,promotion,Marketplace or classified listing message — potentially relevant but not urgent.,0.76,message_0095;message_0390;message_0332
+msg_030,mute,promotion,Classified/marketplace message in a group the user has muted.,0.82,message_0115;message_0232;message_0050
+msg_031,notify,urgent,"Work group message with direct mention, urgent escalation, or same-day work dependency.",0.88,message_0055;message_0249;message_0228
+msg_032,digest,personal,Academic message with no time pressure — can be read later.,0.76,message_0374;message_0285;message_0120
+msg_033,digest,greeting,Casual greeting message — can be read later.,0.78,message_0409;message_0280;message_0122
+msg_034,mute,greeting,Greeting in a group the user has muted.,0.82,message_0078;message_0077;message_0172
+msg_035,digest,business_update,B2B business communication — queued for later review.,0.72,message_0126;message_0125;message_0281
+msg_036,mute,scam,Message is from a business using a non-official domain with high user reports.,0.93,message_0128;message_0127;message_0283
+msg_037,notify,urgent,A society group admin sent an urgent water/tanker notice requiring immediate action.,0.9,message_0271;message_0410;message_0130
+msg_038,mute,spam,High-forward-count chain message asking user to forward to others — typical spam.,0.88,message_0131;message_0132
+msg_039,notify,urgent,Message directly mentions this user and contains an urgent or explicit ask.,0.87,message_0255;message_0037;message_0134
+msg_040,mute,spam,High-forward-count chain message asking user to forward to others — typical spam.,0.88,message_0136;message_0135;message_0259
+msg_041,digest,business_update,"A business is requesting feedback — low priority, shown later.",0.75,message_0138;message_0137
+msg_042,notify,urgent,A society group admin sent an urgent gate or vehicle-blocking notice.,0.9,message_0057;message_0240;message_0140
+msg_043,notify,urgent,A society group admin sent an urgent water/tanker notice requiring immediate action.,0.9,message_0271;message_0410;message_0130
+msg_044,mute,scam,"Message combines OTP/code request with account-blocking pressure, a classic scam pattern.",0.95,message_0036;message_0144;message_0143
+msg_045,notify,urgent,Package delivery requires immediate confirmation or pickup.,0.85,message_0146;message_0145
+msg_046,mute,scam,"Message combines OTP/code request with account-blocking pressure, a classic scam pattern.",0.95,message_0148;message_0147
+msg_047,digest,event,A society group admin sent a maintenance update.,0.76,message_0152;message_0410;message_0151
+msg_048,mute,scam,"Message asks for sensitive action (bank details, screenshot, QR payment, processing fee) typical of fraud.",0.92,message_0152;message_0151;message_0150
+msg_049,notify,business_update,A verified business sent an update that matches the user's recent activity.,0.88,message_0153;message_0291;message_0154
+msg_050,digest,business_update,Business update from an unverified sender — queued for review.,0.65,message_0156;message_0155;message_0279
+msg_051,mute,promotion,User has opted out of marketing messages from this business.,0.87,message_0104;message_0103;message_0257
+msg_052,mute,scam,Message is from a business using a non-official domain with high user reports.,0.93,message_0208;message_0207;message_0160
+msg_053,digest,business_update,Financial research note shared in group — useful but not time-critical.,0.76,message_0411;message_0253;message_0162
+msg_054,mute,scam,"Message asks for sensitive action (bank details, screenshot, QR payment, processing fee) typical of fraud.",0.92,message_0391;message_0389;message_0164
+msg_055,notify,urgent,A contact is urgently requesting a phone call.,0.86,message_0387;message_0166;message_0165
+msg_056,notify,urgent,Message directly mentions this user and contains an urgent or explicit ask.,0.87,message_0078;message_0054;message_0077
+msg_057,notify,urgent,"Work group message with direct mention, urgent escalation, or same-day work dependency.",0.88,message_0371;message_0230;message_0170
+msg_058,mute,forward,Forwarded message contains dangerous health misinformation advising to stop medication.,0.88,message_0078;message_0077;message_0172
+msg_059,mute,scam,"Message asks for sensitive action (bank details, screenshot, QR payment, processing fee) typical of fraud.",0.92,message_0214;message_0173;message_0213
+msg_060,notify,event,Time-sensitive academic or internship deadline message.,0.84,message_0176;message_0404;message_0284
+msg_061,mute,spam,Highly forwarded message containing share/forward instructions — spam chain.,0.86,message_0194;message_0193;message_0247
+msg_062,digest,event,A society group admin sent a scheduled advance notice.,0.76,message_0271;message_0410;message_0130
+msg_063,mute,scam,"Message asks for sensitive action (bank details, screenshot, QR payment, processing fee) typical of fraud.",0.92,message_0182;message_0181
+msg_064,mute,scam,"Message asks for sensitive action (bank details, screenshot, QR payment, processing fee) typical of fraud.",0.92,message_0087;message_0184;message_0088
+msg_065,digest,promotion,Promotional message from a business the user has engaged with.,0.76,message_0186;message_0185;message_0261
+msg_066,mute,promotion,User has opted out of marketing messages from this business.,0.87,message_0188;message_0187
+msg_067,digest,payment,A society group admin sent a payment reminder.,0.78,message_0271;message_0410;message_0130
+msg_068,digest,personal,Casual social chat about entertainment — can be read later.,0.78,message_0192;message_0191
+msg_069,mute,spam,High-forward-count chain message asking user to forward to others — typical spam.,0.88,message_0194;message_0193;message_0247
+msg_070,mute,scam,"Message combines OTP/code request with account-blocking pressure, a classic scam pattern.",0.95,message_0214;message_0173;message_0213
+msg_071,digest,personal,Group chat message without immediate urgency or safety concern.,0.73,message_0197;message_0198
+msg_072,mute,scam,"Message combines OTP/code request with account-blocking pressure, a classic scam pattern.",0.95,message_0214;message_0173;message_0213
+msg_073,mute,scam,Account-threat language with verification link and forwarded — phishing pattern.,0.9,message_0087;message_0184;message_0088
+msg_074,mute,scam,"Message asks for sensitive action (bank details, screenshot, QR payment, processing fee) typical of fraud.",0.92,message_0391;message_0389;message_0164
+msg_075,digest,business_update,A verified business sent a general update.,0.74,message_0206;message_0205
+msg_076,mute,scam,Message is from a business using a non-official domain with high user reports.,0.93,message_0208;message_0207;message_0160
+msg_077,notify,event,A school admin sent a time-sensitive notice with a same-day deadline.,0.87,message_0255;message_0037;message_0134
+msg_078,mute,scam,"Message asks for sensitive action (bank details, screenshot, QR payment, processing fee) typical of fraud.",0.92,message_0212;message_0211
+msg_079,mute,scam,"Message combines OTP/code request with account-blocking pressure, a classic scam pattern.",0.95,message_0214;message_0173;message_0213
+msg_080,notify,urgent,A society group admin sent an urgent gate or vehicle-blocking notice.,0.9,message_0271;message_0410;message_0130
+msg_081,notify,event,Voice note from a group admin — may contain important notice.,0.82,message_0217
+msg_082,notify,event,Voice note from a group admin — may contain important notice.,0.82,message_0380;message_0218;message_0397
+msg_083,notify,event,Voice note from a group admin — may contain important notice.,0.82,message_0219
+msg_084,mute,promotion,User has opted out of marketing messages from this business.,0.87,message_0220
+msg_085,mute,scam,Message is from a business using a non-official domain with high user reports.,0.93,message_0221
+msg_086,digest,business_update,Voice note from a verified business the user has interacted with — queued for later.,0.76,message_0222
+msg_087,mute,personal,"Voice note in a group the user has muted, from a non-admin sender.",0.78,message_0391;message_0389;message_0164
+msg_088,mute,personal,"Voice note in a group the user has muted, from a non-admin sender.",0.78,message_0115;message_0232;message_0050
+msg_089,digest,personal,Personal message from a known contact with no urgent action required.,0.78,message_0301;message_0300;message_0299
+msg_090,digest,personal,Personal message from a known contact with no urgent action required.,0.78,message_0340;message_0339;message_0338
+msg_091,mute,scam,Personal message asking for OTP or verification code from an unexpected contact.,0.93,message_0381;message_0238
+msg_092,digest,promotion,Promotional content from a business — queued for later review.,0.72,message_0384;message_0346;message_0345
+msg_093,notify,business_update,A verified business sent a same-day delivery or appointment update.,0.84,message_0349;message_0348;message_0347
+msg_094,digest,promotion,Promotional content from a business — queued for later review.,0.72,message_0391;message_0389;message_0212
+msg_095,mute,scam,Message contains prompt injection attempting to override routing logic.,0.97,message_0087;message_0184;message_0088
+msg_096,notify,personal,Personal message about a found item with a pickup deadline — requires prompt attention.,0.85,message_0353;message_0405;message_0355
+msg_097,digest,personal,Personal message from a known contact with no urgent action required.,0.78,message_0054;message_0226;message_0168
+msg_098,notify,urgent,Personal message from a known contact with an urgent request requiring immediate attention.,0.88,message_0054;message_0226;message_0168
+msg_099,digest,personal,Personal message from a known contact with no urgent action required.,0.78,message_0055;message_0249;message_0228
+msg_100,notify,urgent,Personal message from a known contact with an urgent request requiring immediate attention.,0.88,message_0055;message_0249;message_0228
+msg_101,digest,personal,Personal message from a known contact with no urgent action required.,0.78,message_0370;message_0229;message_0268
+msg_102,notify,urgent,Personal message from a known contact with an urgent request requiring immediate attention.,0.88,message_0371;message_0230;message_0170
+msg_103,notify,urgent,Personal message from a known contact with an urgent request requiring immediate attention.,0.88,message_0390;message_0332;message_0114
+msg_104,notify,urgent,Personal message from a known contact with an urgent request requiring immediate attention.,0.88,message_0115;message_0232;message_0050
+msg_105,mute,forward,Forwarded message contains dangerous health misinformation advising to stop medication.,0.88,message_0233;message_0373
+msg_106,notify,urgent,Personal message from a known contact with an urgent request requiring immediate attention.,0.88,message_0234;message_0377;message_0376
+msg_107,mute,scam,Message contains prompt injection attempting to override routing logic.,0.97,message_0214;message_0173;message_0213
+msg_108,mute,scam,Message contains prompt injection attempting to override routing logic.,0.97,message_0094;message_0093;message_0236
+msg_109,mute,scam,Message contains prompt injection attempting to override routing logic.,0.97,message_0152;message_0151;message_0150
+msg_110,mute,scam,Message contains prompt injection attempting to override routing logic.,0.97,message_0381;message_0238
