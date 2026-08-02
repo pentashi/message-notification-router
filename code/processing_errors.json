@@ -1,74 +1,152 @@
 [
   {
+    "message_id": "msg_040",
+    "error": "cannot access local variable 'RoutingDecision' where it is not associated with a value",
+    "error_type": "UnboundLocalError",
+    "timestamp": "2026-08-02T11:58:56.508689"
+  },
+  {
     "message_id": "msg_005",
     "error": "'float' object has no attribute 'lower'",
     "error_type": "AttributeError",
-    "timestamp": "2026-08-01T20:43:22.212176"
+    "timestamp": "2026-08-02T11:58:56.524454"
+  },
+  {
+    "message_id": "msg_107",
+    "error": "cannot access local variable 'RoutingDecision' where it is not associated with a value",
+    "error_type": "UnboundLocalError",
+    "timestamp": "2026-08-02T11:58:56.546528"
+  },
+  {
+    "message_id": "msg_016",
+    "error": "cannot access local variable 'RoutingDecision' where it is not associated with a value",
+    "error_type": "UnboundLocalError",
+    "timestamp": "2026-08-02T11:58:56.689088"
+  },
+  {
+    "message_id": "msg_038",
+    "error": "cannot access local variable 'RoutingDecision' where it is not associated with a value",
+    "error_type": "UnboundLocalError",
+    "timestamp": "2026-08-02T11:58:56.700876"
   },
   {
     "message_id": "msg_094",
     "error": "'float' object has no attribute 'lower'",
     "error_type": "AttributeError",
-    "timestamp": "2026-08-01T20:43:32.501840"
+    "timestamp": "2026-08-02T11:58:56.729844"
   },
   {
     "message_id": "msg_029",
     "error": "'float' object has no attribute 'lower'",
     "error_type": "AttributeError",
-    "timestamp": "2026-08-01T20:43:32.854129"
+    "timestamp": "2026-08-02T11:58:56.736850"
   },
   {
     "message_id": "msg_105",
     "error": "'float' object has no attribute 'lower'",
     "error_type": "AttributeError",
-    "timestamp": "2026-08-01T20:43:33.266079"
+    "timestamp": "2026-08-02T11:58:56.740146"
   },
   {
     "message_id": "msg_078",
     "error": "'float' object has no attribute 'lower'",
     "error_type": "AttributeError",
-    "timestamp": "2026-08-01T20:43:34.546172"
+    "timestamp": "2026-08-02T11:58:56.772357"
+  },
+  {
+    "message_id": "msg_044",
+    "error": "cannot access local variable 'RoutingDecision' where it is not associated with a value",
+    "error_type": "UnboundLocalError",
+    "timestamp": "2026-08-02T11:58:56.790240"
+  },
+  {
+    "message_id": "msg_109",
+    "error": "cannot access local variable 'RoutingDecision' where it is not associated with a value",
+    "error_type": "UnboundLocalError",
+    "timestamp": "2026-08-02T11:58:56.828049"
+  },
+  {
+    "message_id": "msg_108",
+    "error": "cannot access local variable 'RoutingDecision' where it is not associated with a value",
+    "error_type": "UnboundLocalError",
+    "timestamp": "2026-08-02T11:58:56.829352"
   },
   {
     "message_id": "msg_050",
     "error": "'float' object has no attribute 'lower'",
     "error_type": "AttributeError",
-    "timestamp": "2026-08-01T20:43:41.114505"
+    "timestamp": "2026-08-02T11:58:56.929216"
   },
   {
     "message_id": "msg_033",
     "error": "'float' object has no attribute 'lower'",
     "error_type": "AttributeError",
-    "timestamp": "2026-08-01T20:43:42.221756"
+    "timestamp": "2026-08-02T11:58:56.950184"
+  },
+  {
+    "message_id": "msg_061",
+    "error": "cannot access local variable 'RoutingDecision' where it is not associated with a value",
+    "error_type": "UnboundLocalError",
+    "timestamp": "2026-08-02T11:58:56.951659"
   },
   {
     "message_id": "msg_020",
     "error": "'float' object has no attribute 'lower'",
     "error_type": "AttributeError",
-    "timestamp": "2026-08-01T20:43:42.964780"
+    "timestamp": "2026-08-02T11:58:56.956664"
+  },
+  {
+    "message_id": "msg_012",
+    "error": "cannot access local variable 'RoutingDecision' where it is not associated with a value",
+    "error_type": "UnboundLocalError",
+    "timestamp": "2026-08-02T11:58:57.133710"
   },
   {
     "message_id": "msg_103",
     "error": "'float' object has no attribute 'lower'",
     "error_type": "AttributeError",
-    "timestamp": "2026-08-01T20:43:51.298954"
+    "timestamp": "2026-08-02T11:58:57.150925"
+  },
+  {
+    "message_id": "msg_015",
+    "error": "cannot access local variable 'RoutingDecision' where it is not associated with a value",
+    "error_type": "UnboundLocalError",
+    "timestamp": "2026-08-02T11:58:57.245761"
   },
   {
     "message_id": "msg_089",
     "error": "'float' object has no attribute 'lower'",
     "error_type": "AttributeError",
-    "timestamp": "2026-08-01T20:43:56.980220"
+    "timestamp": "2026-08-02T11:58:57.277473"
+  },
+  {
+    "message_id": "msg_011",
+    "error": "cannot access local variable 'RoutingDecision' where it is not associated with a value",
+    "error_type": "UnboundLocalError",
+    "timestamp": "2026-08-02T11:58:57.484912"
+  },
+  {
+    "message_id": "msg_110",
+    "error": "cannot access local variable 'RoutingDecision' where it is not associated with a value",
+    "error_type": "UnboundLocalError",
+    "timestamp": "2026-08-02T11:58:57.485728"
+  },
+  {
+    "message_id": "msg_095",
+    "error": "cannot access local variable 'RoutingDecision' where it is not associated with a value",
+    "error_type": "UnboundLocalError",
+    "timestamp": "2026-08-02T11:58:57.486546"
   },
   {
     "message_id": "msg_074",
     "error": "'float' object has no attribute 'lower'",
     "error_type": "AttributeError",
-    "timestamp": "2026-08-01T20:44:08.444162"
+    "timestamp": "2026-08-02T11:58:57.497393"
   },
   {
     "message_id": "msg_054",
     "error": "'float' object has no attribute 'lower'",
     "error_type": "AttributeError",
-    "timestamp": "2026-08-01T20:44:09.199342"
+    "timestamp": "2026-08-02T11:58:57.519111"
   }
 ]
