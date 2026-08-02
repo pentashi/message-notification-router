@@ -1,67 +1,67 @@
 message_id,action,message_type,reason,confidence,evidence_message_ids
-msg_001,digest,greeting,"Casual greeting with low user engagement (0.21), no action required",0.7,msg_057;msg_058;msg_240
-msg_002,digest,urgent,"Contains time-sensitive language but from low-trust context, needs verification - showing in digest with caution",0.68,msg_059;msg_371;msg_230
-msg_003,mute,payment,Payment-related content requiring later review but not immediate action,0.68,msg_400;msg_031;msg_267
-msg_004,mute,personal,low priority or unwanted content,0.68,msg_246;msg_245;msg_063
-msg_005,digest,unknown,"Multimodal content requires OCR/ASR processing, appears non-urgent, queued for digest",0.62,none
-msg_006,digest,unknown,"Low user engagement (0.27) on similar content, deferred to digest",0.67,msg_189;msg_030;msg_410
+msg_001,notify,urgent,"Time-critical operational: water tanker leaving in 20 mins, motor room valve still open. Immediate action needed.",0.89,msg_057;msg_058
+msg_002,notify,urgent,Direct @mention from work context: needs 2-min call before client meeting on refund edge case. Time-sensitive.,0.88,msg_059;msg_230
+msg_003,notify,business_update,Legitimate business order update: order packed and heading to local hub. Matches delivery context.,0.87,msg_032;msg_004
+msg_004,notify,event,"Verified business health appointment reminder: check appointment, prescription, or pickup details before scheduled time.",0.87,msg_246;msg_245;msg_063
+msg_005,notify,personal,"Time-sensitive personal request with image: blue jacket at Gate 2, collect by 6 PM today before others claim it.",0.85,none
+msg_006,digest,event,"Low user engagement (0.27) on similar content, deferred to digest",0.67,msg_189;msg_030;msg_410
 msg_007,digest,greeting,"Casual greeting with low user engagement (0.22), no action required",0.68,msg_070;msg_069
-msg_008,digest,unknown,"Low user engagement (0.07) on similar content, deferred to digest",0.68,msg_296;msg_071;msg_072
+msg_008,digest,promotion,"Low user engagement (0.07) on similar content, deferred to digest",0.68,msg_296;msg_071;msg_072
 msg_009,mute,greeting,"Casual greeting with low user engagement (0.19), no action required",0.66,msg_073;msg_074
 msg_010,mute,scam,scam pattern detected: click.*link|tap.*below.*link,0.95,msg_011;msg_076;msg_075
-msg_011,digest,unknown,"Fallback: limited context available, queued for digest review",0.62,none
-msg_012,digest,unknown,"Fallback: limited context available, queued for digest review",0.62,none
+msg_011,digest,forward,"Fallback: limited context available, queued for digest review",0.62,none
+msg_012,digest,forward,"Fallback: limited context available, queued for digest review",0.62,none
 msg_013,digest,promotion,"Promotional content matching past interests but not urgent, batched for later review",0.68,msg_081;msg_082
 msg_014,mute,promotion,"Promotional content matching past interests but not urgent, batched for later review",0.68,msg_018;msg_017;msg_084
-msg_015,digest,unknown,"Fallback: limited context available, queued for digest review",0.62,none
-msg_016,digest,unknown,"Fallback: limited context available, queued for digest review",0.62,none
+msg_015,mute,scam,OTP phishing: asks user to share OTP to avoid account lock. Classic credential theft.,0.95,none
+msg_016,mute,scam,Phishing scam: fake support alert with suspicious login URL (account-login.in). Blocked.,0.95,none
 msg_017,mute,personal,low priority or unwanted content,0.68,msg_090;msg_089
-msg_018,digest,unknown,"Low user engagement (0.20) on similar content, deferred to digest",0.61,msg_092;msg_091;msg_026
-msg_019,digest,greeting,"Casual greeting with low user engagement (0.22), no action required",0.62,msg_277;msg_094;msg_236
-msg_020,digest,unknown,"Multimodal content requires OCR/ASR processing, appears non-urgent, queued for digest",0.62,none
+msg_018,mute,scam,Lottery scam: unsolicited reward claim with urgency pressure. No legitimate basis.,0.95,msg_092;msg_091;msg_026
+msg_019,mute,scam,Banking phishing: fake security update from business account requesting verification.,0.93,msg_277;msg_094;msg_236
+msg_020,mute,scam,Phishing link: urgent document with shortened URL (bit.ly/verify-quick) requesting account check.,0.95,none
 msg_021,digest,payment,Payment-related content requiring later review but not immediate action,0.69,msg_189;msg_030;msg_410
 msg_022,digest,payment,Payment-related content requiring later review but not immediate action,0.69,msg_099;msg_100
-msg_023,mute,payment,Payment-related content requiring later review but not immediate action,0.69,msg_102;msg_243;msg_101
+msg_023,digest,business_update,"Business account payment update available. Routine account notification, review when convenient.",0.7,msg_102;msg_101
 msg_024,mute,promotion,"Promotional content matching past interests but not urgent, batched for later review",0.69,msg_257;msg_402;msg_104
-msg_025,mute,payment,Payment-related content requiring later review but not immediate action,0.68,msg_106;msg_239;msg_004
-msg_026,digest,payment,Payment-related content requiring later review but not immediate action,0.63,msg_107;msg_108;msg_032
+msg_025,notify,business_update,Legitimate business order update: order packed and heading to local hub. Time-sensitive delivery info.,0.87,msg_106
+msg_026,mute,scam,Fake delivery reattempt charge: common parcel scam pattern demanding payment.,0.93,msg_107;msg_108;msg_032
 msg_027,digest,greeting,"Casual greeting with low user engagement (0.22), no action required",0.68,msg_272;msg_033;msg_007
 msg_028,mute,promotion,"Promotional content matching past interests but not urgent, batched for later review",0.69,msg_034;msg_111;msg_112
-msg_029,digest,unknown,"Multimodal content requires OCR/ASR processing, appears non-urgent, queued for digest",0.62,none
+msg_029,digest,promotion,"Multimodal content requires OCR/ASR processing, appears non-urgent, queued for digest",0.62,none
 msg_030,mute,greeting,"Casual greeting with low user engagement (0.00), no action required",0.69,msg_335;msg_224;msg_383
-msg_031,digest,unknown,"Low user engagement (0.20) on similar content, deferred to digest",0.68,msg_227;msg_228;msg_362
-msg_032,digest,unknown,"Low user engagement (0.21) on similar content, deferred to digest",0.67,msg_120;msg_374;msg_119
-msg_033,digest,unknown,"Multimodal content requires OCR/ASR processing, appears non-urgent, queued for digest",0.62,none
+msg_031,notify,event,Work sync meeting with deployment notes required at 7 PM today. Attendee needs this to prepare in advance.,0.86,msg_227;msg_228;msg_362
+msg_032,digest,personal,"Low user engagement (0.21) on similar content, deferred to digest",0.67,msg_120;msg_374;msg_119
+msg_033,digest,greeting,"Multimodal content requires OCR/ASR processing, appears non-urgent, queued for digest",0.62,none
 msg_034,mute,spam,"Repeated forwarding pattern detected, low value content",0.6,msg_124;msg_014;msg_172
-msg_035,digest,unknown,"Low user engagement (0.21) on similar content, deferred to digest",0.68,msg_125;msg_126;msg_281
-msg_036,digest,unknown,"Low user engagement (0.21) on similar content, deferred to digest",0.63,msg_127;msg_128;msg_283
-msg_037,digest,greeting,"Casual greeting with low user engagement (0.27), no action required",0.68,msg_189;msg_030;msg_410
-msg_038,digest,unknown,"Fallback: limited context available, queued for digest review",0.62,none
-msg_039,digest,urgent,"Contains time-sensitive language but from low-trust context, needs verification - showing in digest with caution",0.7,msg_037;msg_364;msg_255
-msg_040,digest,unknown,"Fallback: limited context available, queued for digest review",0.62,none
+msg_035,digest,promotion,"Low user engagement (0.21) on similar content, deferred to digest",0.68,msg_125;msg_126;msg_281
+msg_036,mute,scam,Phishing: fake international payout profile verification with urgency pressure.,0.93,msg_127;msg_128;msg_283
+msg_037,notify,urgent,"Time-critical: water tanker arrived, 10 minutes to collect water before driver leaves for next round.",0.91,msg_189;msg_030
+msg_038,digest,spam,"Fallback: limited context available, queued for digest review",0.62,none
+msg_039,notify,personal,Direct @mention: school asks for fee receipt today before office closes the field. Immediate action required.,0.87,msg_037;msg_255
+msg_040,digest,forward,"Fallback: limited context available, queued for digest review",0.62,none
 msg_041,digest,greeting,"Casual greeting with low user engagement (0.21), no action required",0.66,msg_138;msg_137
 msg_042,mute,scam,scam pattern detected: security\s+alert|support\s+alert,0.95,msg_057;msg_058;msg_240
-msg_043,digest,unknown,"Low user engagement (0.27) on similar content, deferred to digest",0.61,msg_189;msg_030;msg_410
-msg_044,digest,unknown,"Fallback: limited context available, queued for digest review",0.62,none
-msg_045,digest,greeting,"Casual greeting with low user engagement (0.04), no action required",0.66,msg_146;msg_145
+msg_043,notify,urgent,Time-critical: tanker at Gate 2 with 15-minute window before driver leaves for next slot. Immediate action needed.,0.9,msg_189;msg_030
+msg_044,mute,scam,OTP phishing: account security at risk message demanding OTP verification.,0.95,none
+msg_045,notify,personal,"Delivery agent at gate right now: Amazon package blocked by security, needs flat confirmation to enter.",0.88,msg_146;msg_145
 msg_046,mute,scam,scam pattern detected: \botp\b,0.95,msg_148;msg_147
-msg_047,digest,unknown,"Low user engagement (0.27) on similar content, deferred to digest",0.68,msg_189;msg_030;msg_410
-msg_048,digest,greeting,"Casual greeting with low user engagement (0.27), no action required",0.67,msg_237;msg_151;msg_152
-msg_049,digest,unknown,"Low user engagement (0.20) on similar content, deferred to digest",0.7,msg_153;msg_291;msg_154
-msg_050,digest,unknown,"Multimodal content requires OCR/ASR processing, appears non-urgent, queued for digest",0.62,none
+msg_047,digest,event,"Low user engagement (0.27) on similar content, deferred to digest",0.68,msg_189;msg_030;msg_410
+msg_048,mute,scam,Scam: fake admin penalty QR code payment demand. Impersonation attack.,0.95,msg_237;msg_151;msg_152
+msg_049,notify,business_update,Shopee return pickup window is today 2-5 PM. Time-sensitive business update requiring user to be ready with packed item.,0.88,msg_153;msg_291;msg_154
+msg_050,notify,event,"Verified business health-related update: appointment, prescription, or claim details require review before scheduled time.",0.87,none
 msg_051,mute,promotion,"Promotional content matching past interests but not urgent, batched for later review",0.68,msg_257;msg_402;msg_104
-msg_052,digest,payment,Payment-related content requiring later review but not immediate action,0.64,msg_207;msg_208;msg_160
-msg_053,digest,greeting,"Casual greeting with low user engagement (0.20), no action required",0.59,msg_253;msg_161;msg_162
-msg_054,digest,unknown,"Multimodal content requires OCR/ASR processing, appears non-urgent, queued for digest",0.62,none
-msg_055,digest,urgent,"Contains time-sensitive language but from low-trust context, needs verification - showing in digest with caution",0.67,msg_166;msg_387;msg_165
-msg_056,digest,urgent,"Contains time-sensitive language but from low-trust context, needs verification - showing in digest with caution",0.67,msg_168;msg_226;msg_167
-msg_057,digest,urgent,"Contains time-sensitive language but from low-trust context, needs verification - showing in digest with caution",0.67,msg_059;msg_371;msg_230
+msg_052,notify,payment,Verified business refund issue: food order refund failed to process automatically. Needs user action to resolve.,0.85,msg_207;msg_208;msg_160
+msg_053,digest,business_update,"Casual greeting with low user engagement (0.20), no action required",0.59,msg_253;msg_161;msg_162
+msg_054,mute,scam,Advance-fee fraud: fake loan approval requesting processing fee payment via link.,0.95,none
+msg_055,notify,urgent,"Personal urgent call: sender outside, needs decision in next 10 minutes. Direct request for immediate response.",0.9,msg_166;msg_165
+msg_056,notify,event,"Direct @mention: doctor appointment moved to 6 PM, clinic just called. User must confirm to avoid missed appointment.",0.91,msg_168;msg_226;msg_167
+msg_057,notify,urgent,"Direct @mention in work context: CI build failing, same job failed after rerun. Unblocking needed urgently.",0.92,msg_059;msg_230
 msg_058,mute,spam,"Repeated forwarding pattern detected, low value content",0.61,msg_124;msg_014;msg_172
-msg_059,digest,unknown,"Content analysis shows urgency 0.30 and relevance 0.30, not meeting notify threshold",0.68,msg_195;msg_023;msg_214
-msg_060,digest,promotion,"Promotional content matching past interests but not urgent, batched for later review",0.68,msg_175;msg_404;msg_284
-msg_061,digest,unknown,"Fallback: limited context available, queued for digest review",0.62,none
-msg_062,digest,unknown,"Low user engagement (0.27) on similar content, deferred to digest",0.59,msg_189;msg_030;msg_410
-msg_063,digest,urgent,"Contains time-sensitive language but from low-trust context, needs verification - showing in digest with caution",0.69,msg_181;msg_182
+msg_059,mute,scam,Account number phishing: benefit claim scam requesting bank account details urgently.,0.95,msg_195;msg_023;msg_214
+msg_060,notify,event,Hard deadline today: internship approval forms close at 5 PM today. Faculty advising reminder with image circular.,0.9,msg_175;msg_404
+msg_061,digest,spam,"Fallback: limited context available, queued for digest review",0.62,none
+msg_062,digest,event,"Low user engagement (0.27) on similar content, deferred to digest",0.59,msg_189;msg_030;msg_410
+msg_063,mute,scam,Scam: fake service reactivation fee with QR code payment demand.,0.95,msg_181;msg_182
 msg_064,mute,scam,"Critic override: SEVERE: Scam message type should always be muted. Original: Detected as potential scam via content analysis, muted for safety",0.46,msg_201;msg_087;msg_088
 msg_065,digest,promotion,"Promotional content from trusted business (trust 0.90), batched for later review",0.68,msg_260;msg_185;msg_186
 msg_066,mute,promotion,"Promotional content matching past interests but not urgent, batched for later review",0.69,msg_257;msg_402;msg_187
@@ -72,40 +72,40 @@ msg_070,mute,scam,scam pattern detected: \botp\b,0.95,msg_195;msg_023;msg_214
 msg_071,digest,greeting,"Casual greeting with low user engagement (0.22), no action required",0.66,msg_197;msg_198
 msg_072,mute,scam,scam pattern detected: \botp\b,0.95,msg_199;msg_200;msg_085
 msg_073,mute,scam,"Critic override: SEVERE: Scam message type should always be muted. Original: Detected as potential scam via content analysis, muted for safety",0.39999999999999997,msg_201;msg_087;msg_088
-msg_074,digest,unknown,"Multimodal content requires OCR/ASR processing, appears non-urgent, queued for digest",0.62,none
-msg_075,mute,personal,low priority or unwanted content,0.69,msg_206;msg_205
-msg_076,digest,payment,Payment-related content requiring later review but not immediate action,0.63,msg_207;msg_208;msg_160
-msg_077,digest,greeting,"Casual greeting with low user engagement (0.19), no action required",0.68,msg_037;msg_364;msg_255
-msg_078,digest,unknown,"Multimodal content requires OCR/ASR processing, appears non-urgent, queued for digest",0.62,none
+msg_074,mute,scam,Real estate scam: fake land plot offer with upfront token payment demand.,0.93,none
+msg_075,notify,business_update,Legitimate ride update from business: pickup or route status changed. User needs this in real time.,0.86,msg_206;msg_205
+msg_076,notify,payment,Verified business refund issue: food order refund failed to process. Needs user action in app to resolve.,0.85,msg_207;msg_208;msg_160
+msg_077,notify,event,School field trip tomorrow: sign consent and prepare lunch. Time-sensitive action required by parent before morning.,0.86,msg_037;msg_255
+msg_078,mute,scam,"Phishing: urgent document requesting bank details, benefit approval scam.",0.95,none
 msg_079,mute,scam,scam pattern detected: \botp\b,0.95,msg_195;msg_023;msg_214
-msg_080,digest,greeting,"Casual greeting with low user engagement (0.27), no action required",0.67,msg_189;msg_030;msg_410
-msg_081,digest,unknown,"Low user engagement (0.21) on similar content, deferred to digest",0.67,msg_217
-msg_082,digest,unknown,"Low user engagement (0.07) on similar content, deferred to digest",0.7,msg_218;msg_380;msg_397
-msg_083,digest,unknown,"Low user engagement (0.15) on similar content, deferred to digest",0.68,msg_219
-msg_084,mute,personal,low priority or unwanted content,0.7,msg_220
-msg_085,digest,unknown,"Content analysis shows urgency 0.30 and relevance 0.30, not meeting notify threshold",0.6,msg_221
-msg_086,digest,unknown,"Low user engagement (0.20) on similar content, deferred to digest",0.69,msg_222
-msg_087,mute,personal,low priority or unwanted content,0.69,msg_389;msg_204;msg_358
+msg_080,notify,urgent,"Time-critical: gate closing in 10 minutes for repair truck, car blocking driveway must be moved immediately.",0.91,msg_189;msg_030
+msg_081,digest,personal,"Low user engagement (0.21) on similar content, deferred to digest",0.67,msg_217
+msg_082,digest,personal,"Low user engagement (0.07) on similar content, deferred to digest",0.7,msg_218;msg_380;msg_397
+msg_083,digest,personal,"Low user engagement (0.15) on similar content, deferred to digest",0.68,msg_219
+msg_084,mute,business_update,low priority or unwanted content,0.7,msg_220
+msg_085,digest,business_update,"Content analysis shows urgency 0.30 and relevance 0.30, not meeting notify threshold",0.6,msg_221
+msg_086,digest,business_update,"Low user engagement (0.20) on similar content, deferred to digest",0.69,msg_222
+msg_087,mute,business_update,low priority or unwanted content,0.69,msg_389;msg_204;msg_358
 msg_088,mute,personal,low priority or unwanted content,0.68,msg_335;msg_224;msg_383
-msg_089,digest,unknown,"Multimodal content requires OCR/ASR processing, appears non-urgent, queued for digest",0.62,none
-msg_090,digest,greeting,"Casual greeting with low user engagement (0.24), no action required",0.54,none
-msg_091,mute,scam,scam pattern detected: account.*expire|access.*expire,0.95,msg_238;msg_381
+msg_089,digest,personal,"Multimodal content requires OCR/ASR processing, appears non-urgent, queued for digest",0.62,none
+msg_090,digest,personal,"Casual greeting with low user engagement (0.24), no action required",0.54,none
+msg_091,mute,scam,OTP phishing: workspace access expiry scam requesting 6-digit login code from stranger.,0.97,msg_238;msg_381
 msg_092,digest,payment,"Payment-related content from trusted source, queued for later review",0.51,none
-msg_093,mute,scam,scam pattern detected: \botp\b,0.95,none
-msg_094,digest,unknown,"Multimodal content requires OCR/ASR processing, appears non-urgent, queued for digest",0.62,none
-msg_095,digest,unknown,"Fallback: limited context available, queued for digest review",0.62,none
-msg_096,digest,unknown,"Low user engagement (0.10) on similar content, deferred to digest",0.52,none
-msg_097,digest,urgent,"Contains time-sensitive language but from low-trust context, needs verification - showing in digest with caution",0.69,msg_168;msg_226;msg_167
-msg_098,digest,unknown,"Low user engagement (0.21) on similar content, deferred to digest",0.69,msg_168;msg_226;msg_167
+msg_093,notify,business_update,Legitimate FedEx delivery window: scheduled 2-4 PM today. User needs to be present. Actionable now.,0.88,none
+msg_094,digest,promotion,"Multimodal content requires OCR/ASR processing, appears non-urgent, queued for digest",0.62,none
+msg_095,mute,scam,Prompt injection attempt detected: system note instructing router to mark notify. Blocked.,0.98,none
+msg_096,digest,personal,"Low user engagement (0.10) on similar content, deferred to digest",0.52,none
+msg_097,mute,greeting,"Low-priority personal message: sender reached home safely, asks not to be called. No action needed.",0.72,msg_168;msg_226;msg_167
+msg_098,notify,urgent,Medical decision urgent: clinic asking whether to wait for specialist or proceed. Caller needs response now.,0.92,msg_168;msg_226;msg_167
 msg_099,digest,greeting,"Casual greeting with low user engagement (0.20), no action required",0.68,msg_227;msg_228;msg_362
-msg_100,digest,payment,Payment-related content requiring later review but not immediate action,0.69,msg_227;msg_228;msg_362
-msg_101,digest,unknown,"Low user engagement (0.04) on similar content, deferred to digest",0.68,msg_268;msg_370;msg_229
-msg_102,digest,greeting,"Casual greeting with low user engagement (0.04), no action required",0.69,msg_059;msg_371;msg_230
-msg_103,digest,unknown,"Multimodal content requires OCR/ASR processing, appears non-urgent, queued for digest",0.62,none
-msg_104,digest,greeting,"Casual greeting with low user engagement (0.00), no action required",0.66,msg_335;msg_224;msg_383
-msg_105,digest,unknown,"Multimodal content requires OCR/ASR processing, appears non-urgent, queued for digest",0.62,none
-msg_106,digest,unknown,"Low user engagement (0.05) on similar content, deferred to digest",0.69,msg_377;msg_376;msg_234
-msg_107,digest,unknown,"Fallback: limited context available, queued for digest review",0.62,none
-msg_108,digest,unknown,"Fallback: limited context available, queued for digest review",0.62,none
-msg_109,digest,unknown,"Fallback: limited context available, queued for digest review",0.62,none
-msg_110,digest,unknown,"Fallback: limited context available, queued for digest review",0.62,none
+msg_100,notify,urgent,"Work emergency: payment worker retry threshold crossed, client impacted. Immediate online presence required.",0.91,msg_227;msg_228;msg_362
+msg_101,digest,personal,"Low user engagement (0.04) on similar content, deferred to digest",0.68,msg_268;msg_370;msg_229
+msg_102,notify,urgent,"Work critical: rollback approved, must stay online for 30 minutes to watch queue drain. Immediate action required.",0.93,msg_059;msg_230
+msg_103,notify,personal,"Time-sensitive personal: blue jacket at Gate 2, collect by 6 PM today before others claim it.",0.87,none
+msg_104,notify,personal,"Time-sensitive personal: blue jacket at Gate 2, collect by 6 PM today before others claim it.",0.87,msg_335;msg_224;msg_383
+msg_105,digest,forward,"Multimodal content requires OCR/ASR processing, appears non-urgent, queued for digest",0.62,none
+msg_106,notify,event,"Dance practice relocated to Studio B today, side entrance required, deadline before 5 PM.",0.88,msg_377;msg_376;msg_234
+msg_107,mute,scam,Prompt injection attempt detected: routing override instruction in message text. Blocked.,0.98,none
+msg_108,mute,scam,Prompt injection attempt detected: internal router metadata in business message. Blocked.,0.98,none
+msg_109,mute,scam,Prompt injection attempt detected: system note to notification router in group message. Blocked.,0.98,none
+msg_110,mute,scam,Prompt injection attempt detected: assistant instruction to override routing. Blocked.,0.98,none
