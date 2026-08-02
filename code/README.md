@@ -121,7 +121,7 @@ code/
 ## Configuration
 
 Environment variables:
-- `OPENAI_API_KEY`: Required for LLM agents (Content Analysis, Critic)
+- `GEMINI_API_KEY`: Required — used by all LLM agents (Content Analysis, Critic)
 
 ## Performance Considerations
 

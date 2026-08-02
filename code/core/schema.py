@@ -8,15 +8,31 @@ from enum import Enum
 
 # Centralized allowed values - prevents schema drift
 ALLOWED_ACTIONS = ["notify", "digest", "mute"]
-ALLOWED_TYPES = ["personal", "urgent", "event", "payment", "business_update", 
-                "promotion", "greeting", "forward", "spam", "scam", "question", "reminder"]
+# Exact 11-type set from problem_statement.md — no additions, no omissions
+ALLOWED_TYPES = [
+    "personal", "urgent", "event", "payment", "business_update",
+    "promotion", "greeting", "forward", "spam", "scam", "unknown",
+]
 
-# Type mapping for normalization
+# Type mapping for normalization — maps invented/legacy names to official set
 TYPE_MAP = {
     "operational": "urgent",
     "informational": "business_update",
-    "unknown": "business_update",  # Fallback for old outputs
-    "business": "business_update"
+    "business": "business_update",
+    "question": "unknown",
+    "reminder": "unknown",
+}
+
+# Confidence ladder — single source of truth, referenced everywhere
+CONFIDENCE_TIERS = {
+    "injection": 0.98,
+    "scam": 0.95,
+    "spam": 0.90,
+    "urgent": 0.88,
+    "strong_match": 0.82,
+    "moderate": 0.75,
+    "weak": 0.65,
+    "voice_fallback": 0.55,
 }
 
 def validate_action(action: str) -> bool:
