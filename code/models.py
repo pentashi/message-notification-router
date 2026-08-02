@@ -16,7 +16,7 @@ class ActionType(str, Enum):
 
 
 class MessageType(str, Enum):
-    """Allowed message type classifications."""
+    """Allowed message type classifications — exact 11-type set from problem_statement.md."""
     PERSONAL = "personal"
     URGENT = "urgent"
     EVENT = "event"
@@ -27,17 +27,16 @@ class MessageType(str, Enum):
     FORWARD = "forward"
     SPAM = "spam"
     SCAM = "scam"
-    QUESTION = "question"
-    REMINDER = "reminder"
-    # UNKNOWN REMOVED - not allowed per official spec
+    UNKNOWN = "unknown"
 
 
-# Type mapping for normalization
+# Type mapping for normalization — maps legacy/invented names to official set
 TYPE_MAP = {
     "operational": "urgent",
     "informational": "business_update",
-    "unknown": "business_update",  # Fallback for old outputs
-    "business": "business_update"
+    "business": "business_update",
+    "question": "unknown",
+    "reminder": "unknown",
 }
 
 

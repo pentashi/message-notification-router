@@ -227,6 +227,18 @@ class DataLoader:
             (self.user_business_history_df['business_id'] == business_id)
         ]
 
+    def get_group_membership(self, user_id: str, group_id: str) -> Optional[dict]:
+        """Get a user's membership row for a specific group (or None)."""
+        if self.group_members_df is None or not group_id:
+            return None
+        rows = self.group_members_df[
+            (self.group_members_df['user_id'] == user_id) &
+            (self.group_members_df['group_id'] == group_id)
+        ]
+        if rows.empty:
+            return None
+        return rows.iloc[0].to_dict()
+
     def get_media_path(self, media_id: str, media_type: str) -> Optional[str]:
         """Get file path for media content."""
         if media_type == "image" and self.images_df is not None:

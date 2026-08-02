@@ -101,13 +101,13 @@ class DecisionAgent(BaseAgent):
         )
 
     def _determine_message_type_from_risk(self, risk_assessment: RiskAssessment) -> MessageType:
-        """Determine message type based on risk assessment - never returns unknown."""
+        """Determine message type based on risk assessment."""
         if "scam" in risk_assessment.reason.lower():
             return MessageType.SCAM
         elif "spam" in risk_assessment.reason.lower():
             return MessageType.SPAM
         else:
-            return MessageType.BUSINESS_UPDATE  # Never return unknown
+            return MessageType.UNKNOWN
 
     def _apply_decision_logic(
         self,
@@ -198,13 +198,13 @@ class DecisionAgent(BaseAgent):
         if any(k in text for k in ["hi", "hello", "hey", "good morning"]):
             return MessageType.GREETING
         
-        # Priority 3: Context-based fallback
+        # Context-based fallback
         if context == "personal":
             return MessageType.PERSONAL
         elif context == "preference":
             return MessageType.PERSONAL
         else:
-            return MessageType.BUSINESS_UPDATE  # Never return unknown
+            return MessageType.UNKNOWN
 
     def _calculate_confidence(
         self,

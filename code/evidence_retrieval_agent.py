@@ -26,7 +26,8 @@ class EvidenceRetrievalAgent(BaseAgent):
         
         Args:
             input_data: Contains 'message' (current Message), 'user_history_df' (DataFrame),
-                       'sender_user_id' (optional), 'business_id' (optional)
+                       'sender_user_id' (optional), 'business_id' (optional),
+                       'valid_history_ids' (set of IDs that exist in message_history.csv)
             
         Returns:
             Evidence with relevant message IDs and similarity scores
@@ -37,6 +38,7 @@ class EvidenceRetrievalAgent(BaseAgent):
         user_history_df = input_data.get('user_history_df')
         sender_user_id = input_data.get('sender_user_id')
         business_id = input_data.get('business_id')
+        valid_history_ids: set = input_data.get('valid_history_ids', set())
         
         if not message or user_history_df is None or user_history_df.empty:
             return self._create_evidence(
@@ -70,6 +72,10 @@ class EvidenceRetrievalAgent(BaseAgent):
         # Remove duplicates and keep top 3
         unique_evidence = self._deduplicate_and_rank(all_evidence)
         top_evidence = unique_evidence[:3]
+
+        # Evidence guard: only return IDs that actually exist in message_history.csv
+        if valid_history_ids:
+            top_evidence = [e for e in top_evidence if e['message_id'] in valid_history_ids]
         
         if not top_evidence:
             return self._create_evidence(

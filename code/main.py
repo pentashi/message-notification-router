@@ -90,41 +90,64 @@ class MessageRouter:
         business = self.data_loader.get_business(message.business_id) if message.business_id else None
         user_history_df = self.data_loader.get_user_history(message.user_id)
         user_events_df = self.data_loader.get_user_events(message.user_id)
+        group_membership = self.data_loader.get_group_membership(message.user_id, message.group_id)
+        user_business_row = self.data_loader.get_business_history(message.user_id, message.business_id) if message.business_id else None
         media_path = self.data_loader.get_media_path(message.media_id, message.media_type.value)
-        
-        # Step 2: Risk Gating Agent (safety first)
+
+        # Step 2: Pre-model safety gate — deterministic, no LLM call needed
+        blocked, gate_action, gate_type, gate_conf, gate_reason = SafetyGate.early_gate(
+            message.message_text, message.forwarded_count
+        )
+        if blocked:
+            print(f"  [EARLY GATE] Blocked: {gate_reason}")
+            from models import ActionType, MessageType
+            return RoutingDecision(
+                message_id=message.message_id,
+                action=ActionType(gate_action),
+                message_type=MessageType(gate_type),
+                reason=gate_reason,
+                confidence=gate_conf,
+                evidence_message_ids="none"
+            )
+
+        # Step 3: Risk Gating Agent (deeper rule-based safety)
         risk_assessment = self.risk_gating_agent.process({
             'message': message,
             'business': business
         })
         print(f"  Risk assessment: {risk_assessment.risk_level.value}, should_block: {risk_assessment.should_block}")
         
-        # Step 3: Content Analysis Agent
+        # Step 4: Content Analysis Agent
         content_analysis = self.content_analysis_agent.process({
             'message': message,
             'media_path': media_path
         })
         print(f"  Content analysis: urgency={content_analysis.urgency_score:.2f}, relevance={content_analysis.personal_relevance:.2f}")
         
-        # Step 4: Personalization Agent
+        # Step 5: Personalization Agent — full context including group/business relationship
         personalization_score = self.personalization_agent.process({
             'user': user,
             'business': business,
             'user_history_df': user_history_df,
-            'user_events_df': user_events_df
+            'user_events_df': user_events_df,
+            'group_membership': group_membership,
+            'user_business_row': user_business_row,
+            'message': message,
         })
         print(f"  Personalization: engagement={personalization_score.user_engagement_score:.2f}, trust={personalization_score.trust_score:.2f}")
         
-        # Step 5: Evidence Retrieval Agent
+        # Step 6: Evidence Retrieval Agent
+        valid_history_ids = set(self.data_loader.message_history_df['message_id'].tolist()) if self.data_loader.message_history_df is not None else set()
         evidence = self.evidence_retrieval_agent.process({
             'message': message,
             'user_history_df': user_history_df,
             'sender_user_id': message.sender_user_id,
-            'business_id': message.business_id
+            'business_id': message.business_id,
+            'valid_history_ids': valid_history_ids,
         })
         print(f"  Evidence: {len(evidence.relevant_message_ids)} relevant messages found")
         
-        # Step 6: Decision Agent
+        # Step 7: Decision Agent
         preliminary_decision = self.decision_agent.process({
             'risk_assessment': risk_assessment,
             'content_analysis': content_analysis,
@@ -134,7 +157,7 @@ class MessageRouter:
         })
         print(f"  Preliminary decision: {preliminary_decision.action.value}, type={preliminary_decision.message_type.value}")
         
-        # Step 7: Adversarial Critic Agent
+        # Step 8: Adversarial Critic Agent
         critic_review = self.critic_agent.process({
             'preliminary_decision': preliminary_decision,
             'message': message,
@@ -144,7 +167,7 @@ class MessageRouter:
         if not critic_review.approved:
             print(f"    Criticisms: {critic_review.criticisms}")
         
-        # Step 8: Final Arbiter with circuit breaker
+        # Step 9: Final Arbiter with circuit breaker
         final_decision = self.final_arbiter.process({
             'preliminary_decision': preliminary_decision,
             'critic_review': critic_review,
@@ -153,7 +176,7 @@ class MessageRouter:
         })
         print(f"  Final decision: {final_decision.action.value}, confidence={final_decision.confidence:.2f}")
         
-        # Step 9: Post-Model Safety Gate (Deterministic - cannot be overridden)
+        # Step 10: Post-model safety gate floor (cannot be overridden)
         safe_action, safe_type, safe_conf, safe_reason = SafetyGate.apply_safety_gate(
             message.message_text,
             final_decision.action.value,
@@ -162,7 +185,7 @@ class MessageRouter:
             final_decision.reason
         )
         
-        # Step 10: Schema Validation
+        # Step 11: Schema Validation
         decision_dict = {
             "message_id": final_decision.message_id,
             "action": safe_action,
@@ -175,9 +198,8 @@ class MessageRouter:
         is_valid, errors = validate_routing_decision(decision_dict)
         if not is_valid:
             print(f"  Schema validation failed: {errors}")
-            # Force to safe defaults if validation fails
             safe_action = "digest"
-            safe_type = "business_update"
+            safe_type = "unknown"
             safe_conf = 0.5
             safe_reason = f"Schema validation failed: {errors[0]}"
         
@@ -229,8 +251,8 @@ class MessageRouter:
                     fallback_decision = RoutingDecision(
                         message_id=message.message_id,
                         action=ActionType.DIGEST,
-                        message_type=MessageType.BUSINESS_UPDATE,
-                        reason="Multimodal content requires OCR/ASR processing, appears promotional but not urgent, queued for digest",
+                        message_type=MessageType.UNKNOWN,
+                        reason="Multimodal content requires OCR/ASR processing, appears non-urgent, queued for digest",
                         confidence=0.62,
                         evidence_message_ids="none"
                     )
@@ -240,8 +262,8 @@ class MessageRouter:
                     fallback_decision = RoutingDecision(
                         message_id=message.message_id,
                         action=ActionType.DIGEST,
-                        message_type=MessageType.BUSINESS_UPDATE,
-                        reason="Fallback: multimodal content with limited context, queued for digest review",
+                        message_type=MessageType.UNKNOWN,
+                        reason="Fallback: limited context available, queued for digest review",
                         confidence=0.62,  # Not 0.1
                         evidence_message_ids="none"
                     )
@@ -257,6 +279,52 @@ class MessageRouter:
             print(f"Logged {len(self.error_log)} errors to processing_errors.json")
         
         return decisions
+
+    def validate_output(self, decisions: List[RoutingDecision]) -> List[str]:
+        """
+        Final output validation pass — run before writing CSV.
+        Returns a list of warning strings (empty = all good).
+        """
+        from core.schema import ALLOWED_ACTIONS, ALLOWED_TYPES
+        warnings = []
+        expected_ids = {m.message_id for m in self.data_loader.get_all_messages()}
+        valid_history_ids = set(
+            self.data_loader.message_history_df['message_id'].tolist()
+        ) if self.data_loader.message_history_df is not None else set()
+        seen_ids = set()
+
+        for d in decisions:
+            # Duplicate check
+            if d.message_id in seen_ids:
+                warnings.append(f"DUPLICATE message_id: {d.message_id}")
+            seen_ids.add(d.message_id)
+
+            # Action in allowed set
+            if d.action.value not in ALLOWED_ACTIONS:
+                warnings.append(f"{d.message_id}: invalid action '{d.action.value}'")
+
+            # Type in allowed 11-set
+            if d.message_type.value not in ALLOWED_TYPES:
+                warnings.append(f"{d.message_id}: invalid message_type '{d.message_type.value}'")
+
+            # Confidence range
+            if not (0.0 <= d.confidence <= 1.0):
+                warnings.append(f"{d.message_id}: confidence {d.confidence} out of [0,1]")
+
+            # Evidence IDs must exist in message_history or be 'none'
+            ev = d.evidence_message_ids
+            if ev and ev.lower() != "none":
+                for eid in ev.split(";"):
+                    eid = eid.strip()
+                    if eid and eid not in valid_history_ids:
+                        warnings.append(f"{d.message_id}: evidence ID '{eid}' not in message_history.csv")
+
+        # Coverage check
+        missing = expected_ids - seen_ids
+        for mid in missing:
+            warnings.append(f"MISSING prediction for message_id: {mid}")
+
+        return warnings
 
     def normalize_evidence(self, evidence_str: str) -> str:
         """Normalize evidence IDs to msg_XXX format."""
@@ -329,6 +397,15 @@ def main():
     
     # Process all messages
     decisions = router.process_all_messages()
+
+    # Output validation pass before writing
+    warnings = router.validate_output(decisions)
+    if warnings:
+        print(f"\n⚠  Output validation found {len(warnings)} issue(s):")
+        for w in warnings:
+            print(f"   {w}")
+    else:
+        print(f"\n✓ Output validation passed ({len(decisions)} rows, all valid)")
     
     # Save results
     router.save_decisions_to_csv(decisions, "../dataset/output.csv")
